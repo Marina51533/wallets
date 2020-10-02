@@ -27,11 +27,11 @@
     </div>
   </div>
 
-  <nav  id='opac' class=" navbar navbar-expand-lg fixed-top navbar-dark" style='background-color: rgb(0, 0, 2);'>
-    <a  class="navbar-brand ml-lg-4" href="#"><img class='logo_img' src='img/logo.png'></a>
+  <nav  class=" navbar navbar-expand-lg fixed-top navbar-light" style='background-color: rgb(250, 201, 246);'>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <a  class="navbar-brand ml-lg-4" href="#"><img class='logo_img' src='img/logo.png'></a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto ml-5 mt-2 mt-lg-0">
         <li class="nav-item active">
@@ -71,7 +71,6 @@
         ENG
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">PL</a>
         <a class="dropdown-item" href="#">RUS</a>
       </div>
     </li>
@@ -83,39 +82,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src='js/main.js '></script>
-  <script>
-    // После загрузки DOM-дерева (страницы)
-    $(function() {     
-      //при нажатии на ссылку, содержащую Thumbnail
-      $('a.thumbnail').click(function(e) {
-        //отменить стандартное действие браузера
-        e.preventDefault();
-        //присвоить атрибуту scr элемента img модального окна
-        //значение атрибута scr изображения, которое обёрнуто
-        //вокруг элемента a, на который нажал пользователь
-        $('#image-modal .modal-body img').attr('src', $(this).find('img').attr('src'));
-        //открыть модальное окно
-        $("#image-modal").modal('show');
-      });
-      //при нажатию на изображение внутри модального окна 
-      //закрыть его (модальное окно)
-      $('#image-modal .modal-body img').on('click', function() {
-        $("#image-modal").modal('hide')
-      });
-      document.addEventListener("scroll", function() {
-        document.getElementById("opac").style.opacity = 1;
-        document.getElementById("opac1").style.opacity = 1;
-        document.getElementById("opac1").style.paddingTop = '60vh';
-        document.getElementById("delivery").style.opacity = 1;
-        document.getElementById("del").style.marginLeft = '11vw';
-      });
-    });
-  
-    </script>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script>  
-            var ens_lang = 'en';
-    </script>
+
+   
 <script defer src="https://lk.easynetshop.ru/frontend/v5/ens-cbba4eba.js"></script>
 <script defer src="https://lk.easynetshop.ru/frontend/v5/en/ens-cbba4eba.js"></script>
 <link href="https://lk.easynetshop.ru/frontend/v5/ens-cbba4eba.css" rel="stylesheet">
