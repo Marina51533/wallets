@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <title>Wallets</title>
+  <link rel='stylesheet' type='text/css' href='css/style.css'>
+</head>
+
+<body>
+  <div class="modal fade" id="image-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <div class="modal-title">Image</div>
+        </div>
+        <div class="modal-body">
+          <img class="img-responsive center-block" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav  id='opac' class=" navbar navbar-expand-lg fixed-top navbar-dark" style='background-color: rgb(0, 0, 2);'>
+    <a  class="navbar-brand ml-lg-4" href="#"><img class='logo_img' src='img/logo.png'></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto ml-5 mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link"  href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Catalog
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#item1">Refrigeration equipment</a>
+            <a class="dropdown-item" href="#item2">Bar equipmet</a>
+            <a class="dropdown-item" href="#item3">Hotel equipmet</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#brands">Brands</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#delivery1">Delivery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#delivery1">Payment</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacts_our">Contacts</a>
+        </li>
+      
+      </ul>
+     
+    </div>
+    <li class="nav-item dropdown lang">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        ENG
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">PL</a>
+        <a class="dropdown-item" href="#">RUS</a>
+      </div>
+    </li>
+  </nav>
+  
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src='js/main.js '></script>
+  <script>
+    // После загрузки DOM-дерева (страницы)
+    $(function() {     
+      //при нажатии на ссылку, содержащую Thumbnail
+      $('a.thumbnail').click(function(e) {
+        //отменить стандартное действие браузера
+        e.preventDefault();
+        //присвоить атрибуту scr элемента img модального окна
+        //значение атрибута scr изображения, которое обёрнуто
+        //вокруг элемента a, на который нажал пользователь
+        $('#image-modal .modal-body img').attr('src', $(this).find('img').attr('src'));
+        //открыть модальное окно
+        $("#image-modal").modal('show');
+      });
+      //при нажатию на изображение внутри модального окна 
+      //закрыть его (модальное окно)
+      $('#image-modal .modal-body img').on('click', function() {
+        $("#image-modal").modal('hide')
+      });
+      document.addEventListener("scroll", function() {
+        document.getElementById("opac").style.opacity = 1;
+        document.getElementById("opac1").style.opacity = 1;
+        document.getElementById("opac1").style.paddingTop = '60vh';
+        document.getElementById("delivery").style.opacity = 1;
+        document.getElementById("del").style.marginLeft = '11vw';
+      });
+    });
+  
+    </script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>  
+            var ens_lang = 'en';
+    </script>
+<script defer src="https://lk.easynetshop.ru/frontend/v5/ens-cbba4eba.js"></script>
+<script defer src="https://lk.easynetshop.ru/frontend/v5/en/ens-cbba4eba.js"></script>
+<link href="https://lk.easynetshop.ru/frontend/v5/ens-cbba4eba.css" rel="stylesheet">
+</body>
+
+</html>
